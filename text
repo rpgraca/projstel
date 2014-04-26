@@ -1,0 +1,37 @@
+Trabalho nº 3: Simulação de um sistema de atendimento de suporte técnico
+
+Um sistema de atendimento tem dois tipos de clientes, prioritários e normais, e garante um nível de serviço comparavelmente melhor para os clientes prioritários.
+
+O sistema deverá ser dimensionado em termos de número de agentes de atendimento de modo a proporcionar um nível de serviço definido através dos seguintes parâmetros:
+
+- pelo menos 90% das chamadas prioritárias deverão ser atendidas em menos de 1 minuto;
+
+- a taxa de abandono de chamadas prioritárias não deve exceder 5%;
+
+- pelo menos 90% das chamadas normais deverão ser atendidas em menos de 5 minutos;
+
+- a taxa de abandono de chamadas normais não deve exceder 10%.
+
+O sistema deverá ser dimensionado para uma taxa de chamadas prioritárias de 30% em relação ao total.
+
+Quando um utilizador acede ao sistema, poderá abandoná-lo em duas situações:
+
+- se encontrar o sistema ocupado, por não estar disposto a esperar qualquer tempo: 5%dos utilizadores abandonam precocemente o sistema nestas circunstâncias;
+
+- estando ocupado o sistema, aceita esperar pelo menos 1 minuto, mas decorrido este período e até 6 minutos, poderá abandonar o sistema com uma probabilidade que cresce linearmente de 0 a 1, presumindo-se que nenhum cliente aceita esperar mais de 6 minutos.
+
+Para otimizar o sistema satisfazendo os requisitos definidos para os dois tipos de clientes, poderá admitir a aplicação das seguintes estratégias, ou de outras que considere adequadas:
+
+- os clientes prioritários poderão ter um tratamento preferencial no serviço da fila de espera;
+
+- quando o sistema está próximo da sobrecarga, uma chamada normal poderá não ser servida ainda que exista um ou mais agentes livres.
+
+Considere uma taxa de chegada de 1 chamada por minuto, com distribuição exponencial entre as chegadas.
+
+Admita que a duração das chamadas tem uma distribuição lognormal, com uma média de 1,5 e um desvio padrão de 0,6 do logaritmo de base e da variável duração expressa em minutos
+
+a) Determine o número de agentes que proporciona o nível de serviço pretendido, e caracterize a estratégia de atribuição de recursos que adotou.
+
+b) Faça uma análise de sensibilidade, variando a taxa de chamadas prioritárias entre 10% e 50%.
+
+Oportunamente serão definidos outros resultados a apresentar no relatório e a sua estrutura.
