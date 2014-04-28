@@ -11,8 +11,8 @@
 #define PROP					0.3
 #define DLNORM					5.0
 #define DLPRI					1.0
-#define DELTAN  				(-1.5)
-#define DELTAP					1.0
+#define DELTAN  				0.0	
+#define DELTAP					2.2
 #define DEADLINE(x) 				(x==PRIORITARIA?DLPRI:DLNORM)
 #define DELTA(x) 				(x==PRIORITARIA?DELTAP:DELTAN)
 #define PRECOCES 				0.05
