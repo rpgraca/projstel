@@ -4,20 +4,20 @@
 #include <math.h>
 #include "listaligada.h"
 
-#define NUMEV					10000000
+#define NUMEV					1000000
 #define PI					3.14159265358979323846
-#define LAMBDA 					1
-#define CANAIS 					7
-#define PROP					0.1
+#define LAMBDA 					5
+#define CANAIS	 				26
+#define PROP					0.3
 #define DLNORM					5.0
 #define DLPRI					1.0
-#define DELTAN  				0.0
-#define DELTAP					(-0.2)
+#define DELTAN  				(-1.5)
+#define DELTAP					1.0
 #define DEADLINE(x) 				(x==PRIORITARIA?DLPRI:DLNORM)
 #define DELTA(x) 				(x==PRIORITARIA?DELTAP:DELTAN)
 #define PRECOCES 				0.05
 
-#define RECUSA					0.10
+#define RECUSA					0.00
 
 #define MU 					1.5
 #define STDEV 					0.6
