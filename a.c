@@ -8,7 +8,7 @@
 #define PI					3.14159265358979323846
 #define LAMBDA 					1
 #define CANAIS 					7
-#define PROP					0.3
+#define PROP					0.1
 #define DLNORM					5.0
 #define DLPRI					1.0
 #define DELTAN  				0.0
@@ -16,6 +16,8 @@
 #define DEADLINE(x) 				(x==PRIORITARIA?DLPRI:DLNORM)
 #define DELTA(x) 				(x==PRIORITARIA?DELTAP:DELTAN)
 #define PRECOCES 				0.05
+
+#define RECUSA					0.10
 
 #define MU 					1.5
 #define STDEV 					0.6
@@ -26,7 +28,6 @@
 #define CHEGADA					0
 #define TERMINO					1
 
-#define PRECOCES 				0.05
 
 double gentimeexp(double lambda);
 double gentimelog(double mu,double sigma);
@@ -77,7 +78,7 @@ int main()
 			if(ativas >= CANAIS)
 			{
 				// Desistencias Permaturas
-				if(rand() < PRECOCES*RAND_MAX)
+				if(rand() < PRECOCES*RAND_MAX || (rand() < RAND_MAX*RECUSA && tipo == NORMAL))
 				{
 					perdidas[tipo]++;	
 				}
