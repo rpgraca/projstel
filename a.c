@@ -4,29 +4,29 @@
 #include <math.h>
 #include "listaligada.h"
 
-#define NUMEV	10000000
-#define PI	3.14159
-#define LAMBDA 	1
-#define CANAIS 	7
-#define PROP	0.3
-#define DLNORM	5.0
-#define DLPRI	1.0
-#define DELTAN  0.0
-#define DELTAP	0.0
-#define DEADLINE(x) 	(x==PRIORITARIA?DLPRI:DLNORM)
-#define DELTA(x) 	(x==PRIORITARIA?DELTAP:DELTAN)
-#define PRECOCES 0.05
+#define NUMEV					10000000
+#define PI					3.14159265358979323846
+#define LAMBDA 					1
+#define CANAIS 					7
+#define PROP					0.3
+#define DLNORM					5.0
+#define DLPRI					1.0
+#define DELTAN  				0.0
+#define DELTAP					(-0.2)
+#define DEADLINE(x) 				(x==PRIORITARIA?DLPRI:DLNORM)
+#define DELTA(x) 				(x==PRIORITARIA?DELTAP:DELTAN)
+#define PRECOCES 				0.05
 
-#define MU 	1.5
-#define STDEV 	0.6
+#define MU 					1.5
+#define STDEV 					0.6
 
-#define PRIORITARIA 	0
-#define NORMAL		1
+#define PRIORITARIA 				0
+#define NORMAL					1
 
-#define CHEGADA	0
-#define TERMINO	1
+#define CHEGADA					0
+#define TERMINO					1
 
-#define PRECOCES 0.05
+#define PRECOCES 				0.05
 
 double gentimeexp(double lambda);
 double gentimelog(double mu,double sigma);
