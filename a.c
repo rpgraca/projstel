@@ -5,15 +5,15 @@
 #include "listaligada.h"
 
 #define NUMEV					1000000
-#define PI					3.14159265358979323846
+#define PI						3.14159265358979323846
 #define LAMBDA 					5
 #define CANAIS	 				26
-#define PROP					0.3
+#define PROP					0.1
 #define DLNORM					5.0
 #define DLPRI					1.0
-#define DELTAN  				0.0	
-#define DELTAP					2.2
-#define DEADLINE(x) 				(x==PRIORITARIA?DLPRI:DLNORM)
+#define DELTAN  				5	
+#define DELTAP					3.2	
+#define DEADLINE(x) 			(x==PRIORITARIA?DLPRI:DLNORM)
 #define DELTA(x) 				(x==PRIORITARIA?DELTAP:DELTAN)
 #define PRECOCES 				0.05
 
@@ -86,7 +86,7 @@ int main()
 				// Adicionar à fila de espera	
 				else
 				{
-					fila=adicionar(fila,tipo,eventos->tempo+DEADLINE(tipo)+DELTA(tipo));
+					fila=adicionar(fila,tipo,eventos->tempo+DELTA(tipo));
 					adicionadas[tipo]++;				
 				}
 			}
@@ -106,7 +106,7 @@ int main()
 			terminos++;
 
 			// Verficar desistencia
-			while(fila != NULL && desistiu(eventos->tempo-fila->tempo+DEADLINE(fila->tipo)+DELTA(fila->tipo)))
+			while(fila != NULL && desistiu(eventos->tempo-fila->tempo+DELTA(fila->tipo)))
 			{
 				perdidas[fila->tipo]++;
 				fila=remover(fila);
@@ -114,7 +114,7 @@ int main()
 			if(fila != NULL)
 			{
 				// Verificar se Deadline excedida
-				if(fila->tempo - DELTA(fila->tipo) < eventos->tempo)
+				if(fila->tempo - DELTA(fila->tipo) + DEADLINE(fila->tipo) < eventos->tempo)
 				{
 					atrasadas[fila->tipo]++;
 				}
